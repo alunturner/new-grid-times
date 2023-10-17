@@ -23,6 +23,10 @@ const StyledSeparator = styled.div`
     width: 100%;
     border: 1px solid var(--color-gray-300);
     margin: 16px 0;
+
+    @media ${QUERIES.tabletOnly} { 
+        display: none;
+    }
 `
 const MainStoryGrid = () => {
     return (
@@ -91,6 +95,11 @@ const SecondaryStorySection = styled.section`
 const StoryList = styled.div`
   display: flex;
   flex-direction: column;
+
+    @media ${QUERIES.tabletOnly} {
+        display: grid;
+        grid-auto-flow: column;
+    }
 `;
 
 const OpinionSection = styled.section`
