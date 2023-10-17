@@ -51,10 +51,21 @@ const Wrapper = styled.div`
 
 const MarketsSection = styled.section``;
 
-const MarketCards = styled.div``;
+const MarketCards = styled.div`
+display: grid;
+gap: 16px;
+grid-template-columns:
+repeat(auto-fill, minmax(150px, 1fr));
+overflow: scroll;`;
 
-const SportsSection = styled.section``;
+const SportsSection = styled.section`
+`;
 
-const SportsStories = styled.div``;
-
+const SportsStories = styled.div`
+display: grid;
+gap: 16px;
+grid-template-columns:
+repeat(auto-fill, minmax(150px, 1fr));
+overflow: scroll;
+`
 export default SpecialtyStoryGrid;
