@@ -9,31 +9,39 @@ import Logo from '../Logo';
 import Button from '../Button';
 
 const Header = () => {
-  return (
-    <header>
-      <SuperHeader>
-        <Row>
-          <ActionGroup>
-            <button>
-              <Search size={24} />
-            </button>
-            <button>
-              <Menu size={24} />
-            </button>
-          </ActionGroup>
-          <ActionGroup>
-            <button>
-              <User size={24} />
-            </button>
-          </ActionGroup>
-        </Row>
-      </SuperHeader>
-      <MainHeader>
-        <Logo />
-      </MainHeader>
-    </header>
-  );
+    return (
+        <header>
+            <SuperHeader>
+                <Row>
+                    <ActionGroup>
+                        <button>
+                            <Search size={24} />
+                        </button>
+                        <button>
+                            <Menu size={24} />
+                        </button>
+                    </ActionGroup>
+                    <ActionGroup>
+                        <button>
+                            <User size={24} />
+                        </button>
+                    </ActionGroup>
+                </Row>
+            </SuperHeader>
+            <MobileHeader>
+                <MainHeader>
+                    <Logo />
+                </MainHeader>
+            </MobileHeader>
+        </header>
+    );
 };
+
+const MobileHeader = styled.div`
+    @media ${QUERIES.desktopAndUp} {
+        display: none;
+    }
+`
 
 const SuperHeader = styled.div`
   padding: 16px 0;
