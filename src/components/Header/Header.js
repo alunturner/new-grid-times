@@ -91,25 +91,17 @@ const ActionGroup = styled.div`
   svg {
     display: block;
   }
+  /* No idea why this is the required selector */
+  &:nth-last-of-type(2) {
+    @media ${QUERIES.desktopAndUp} {
+        display: none;
+    }
+  }
 `;
 
 const Row = styled(MaxWidthWrapper)`
   display: flex;
   justify-content: space-between;
-
-    &:nth-child(3) {
-        display: revert;
-        @media ${QUERIES.desktopAndUp} {
-            display: none;
-        }
-    }
-
-    &:nth-child(4) {
-        display: none;
-        @media ${QUERIES.desktopAndUp} {
-            display: revert;
-        }
-    }
 `;
 
 const MainHeader = styled(MaxWidthWrapper)`
