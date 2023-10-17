@@ -1,26 +1,28 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
+import { QUERIES } from '../../constants'
+
 const MainStory = ({
-  id,
-  title,
-  image,
-  location,
-  abstract,
-  ...delegated
+    id,
+    title,
+    image,
+    location,
+    abstract,
+    ...delegated
 }) => {
-  return (
-    <Wrapper {...delegated}>
-      <a href={`/story/${id}`}>
-        <Image alt={image.alt} src={image.src} />
-        <Heading>{title}</Heading>
-      </a>
-      <Abstract>
-        <Location>{location}</Location> — {abstract}
-      </Abstract>
-      <ReadMore href="/story">Continue Reading</ReadMore>
-    </Wrapper>
-  );
+    return (
+        <Wrapper {...delegated}>
+            <a href={`/story/${id}`}>
+                <Image alt={image.alt} src={image.src} />
+                <Heading>{title}</Heading>
+            </a>
+            <Abstract>
+                <Location>{location}</Location> — {abstract}
+            </Abstract>
+            <ReadMore href="/story">Continue Reading</ReadMore>
+        </Wrapper>
+    );
 };
 
 const Wrapper = styled.article`
@@ -41,12 +43,21 @@ const Heading = styled.h2`
 `;
 
 const Abstract = styled.p`
+    --line-count: 8;
+
   font-size: 1rem;
   margin-bottom: 1em;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 8;
+    -webkit-line-clamp: var(--line-count);
     overflow: hidden;
+
+    @media ${QUERIES.tabletAndUp} {
+        --line-count: 16;
+    }
+    @media ${QUERIES.desktopAndUp} {
+        --line-count: 9;
+    }
 `;
 
 const Location = styled.span`
