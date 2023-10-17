@@ -82,6 +82,13 @@ const Wrapper = styled.div`
             "opinion-stories opinion-stories";
         grid-template-columns: 3fr 1fr;
     } 
+
+    @media ${QUERIES.desktopAndUp} {
+        grid-template-areas: 
+            "main-story secondary-stories opinion-stories"
+            "main-story advertisement advertisement";
+        grid-template-columns: 2fr 1fr 1fr;
+    }
 `;
 
 const MainStorySection = styled.section`
