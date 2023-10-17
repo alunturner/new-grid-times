@@ -21,6 +21,11 @@ const Header = () => {
                             <Menu size={24} />
                         </button>
                     </ActionGroup>
+                    <DesktopHeader>
+                        <MainHeader>
+                            <Logo />
+                        </MainHeader>
+                    </DesktopHeader>
                     <ActionGroup>
                         <button>
                             <User size={24} />
@@ -37,6 +42,13 @@ const Header = () => {
     );
 };
 
+const DesktopHeader = styled.div`
+    display: none;
+
+    @media ${QUERIES.desktopAndUp} {
+        display: revert;
+    }
+`
 const MobileHeader = styled.div`
     @media ${QUERIES.desktopAndUp} {
         display: none;
