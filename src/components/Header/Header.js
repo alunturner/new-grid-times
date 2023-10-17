@@ -31,6 +31,11 @@ const Header = () => {
                             <User size={24} />
                         </button>
                     </ActionGroup>
+                    <ButtonWrapper>
+                        <Button>
+                            subscribe
+                        </Button>
+                    </ButtonWrapper>
                 </Row>
             </SuperHeader>
             <MobileHeader>
@@ -41,6 +46,15 @@ const Header = () => {
         </header>
     );
 };
+
+const ButtonWrapper = styled.div`
+    display: none;
+
+    @media ${QUERIES.desktopAndUp} {
+        display: revert;
+        align-self: center;
+    }
+`
 
 const DesktopHeader = styled.div`
     display: none;
@@ -59,11 +73,11 @@ const SuperHeader = styled.div`
   padding: 16px 0;
   background: var(--color-gray-900);
   color: white;
-`;
-
-const Row = styled(MaxWidthWrapper)`
-  display: flex;
-  justify-content: space-between;
+    
+    @media ${QUERIES.desktopAndUp} {
+        color: var(--color-off-black);
+        background: var(--color-gray-100);
+    }
 `;
 
 const ActionGroup = styled.div`
@@ -77,6 +91,25 @@ const ActionGroup = styled.div`
   svg {
     display: block;
   }
+`;
+
+const Row = styled(MaxWidthWrapper)`
+  display: flex;
+  justify-content: space-between;
+
+    &:nth-child(3) {
+        display: revert;
+        @media ${QUERIES.desktopAndUp} {
+            display: none;
+        }
+    }
+
+    &:nth-child(4) {
+        display: none;
+        @media ${QUERIES.desktopAndUp} {
+            display: revert;
+        }
+    }
 `;
 
 const MainHeader = styled(MaxWidthWrapper)`
